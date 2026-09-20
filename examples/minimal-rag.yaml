@@ -1,0 +1,33 @@
+name: Minimal RAG fixture
+slug: minimal-rag
+version: 1
+frozen: true
+cases:
+  - id: hello-001
+    input: Which colour is the demo flag?
+    context:
+      - document_id: demo-handbook
+        passage_id: p1
+        text: The demo flag is teal.
+    expected_facts:
+      - The demo flag is teal.
+    expected_citations:
+      - document_id: demo-handbook
+        passage_id: p1
+    expected_fields:
+      answer: The demo flag is teal.
+    tags: [synthetic]
+    difficulty: easy
+    split: held_out
+  - id: hello-002
+    input: What is the unlisted weekend policy?
+    context:
+      - document_id: demo-handbook
+        passage_id: p1
+        text: The demo flag is teal.
+    expected_refusal: true
+    expected_fields:
+      answer: Unable to verify from the supplied evidence.
+    tags: [synthetic, missing-evidence]
+    difficulty: hard
+    split: held_out

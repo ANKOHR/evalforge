@@ -1,0 +1,3 @@
+name: Deterministic baseline fixture
+kind: deterministic_rag
+variant: baseline_v1
