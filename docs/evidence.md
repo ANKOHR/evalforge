@@ -16,6 +16,7 @@ Updated: 2026-09-20
 
 - The static-first Next.js dashboard is deployed at [evalforge-web.vercel.app](https://evalforge-web.vercel.app).
 - The public page returns HTTP 200, renders the deterministic `BLOCK_RELEASE` comparison, and serves the generated report artifact.
+- The implementation and evidence ledger are publicly inspectable at [github.com/ANKOHR/evalforge](https://github.com/ANKOHR/evalforge) on the `main` branch.
 
 ## Not verified or not claimed
 

@@ -4,7 +4,7 @@ Regression testing for LLM, RAG and agent systems.
 
 EvalForge is evaluation infrastructure rather than another chatbot. It freezes datasets, runs deterministic or externally-adapted candidate systems, scores outputs with explicit graders, groups failures and applies release gates. The verified demo requires no API key and uses synthetic RAG and tool-calling fixtures.
 
-[Dashboard](https://evalforge-web.vercel.app) · [TraceBrowser sibling project](https://tracebrowser-web.vercel.app)
+[Dashboard](https://evalforge-web.vercel.app) · [GitHub](https://github.com/ANKOHR/evalforge) · [Evidence](https://github.com/ANKOHR/evalforge/blob/main/docs/evidence.md) · [TraceBrowser sibling project](https://tracebrowser-web.vercel.app)
 
 ## The flagship proof
 
