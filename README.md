@@ -1,10 +1,19 @@
 # EvalForge
 
+[![EvalForge CI](https://github.com/ANKOHR/evalforge/actions/workflows/ci.yml/badge.svg)](https://github.com/ANKOHR/evalforge/actions/workflows/ci.yml)
+
 Regression testing for LLM, RAG and agent systems.
 
 EvalForge is evaluation infrastructure rather than another chatbot. It freezes datasets, runs deterministic or externally-adapted candidate systems, scores outputs with explicit graders, groups failures and applies release gates. The verified demo requires no API key and uses synthetic RAG and tool-calling fixtures.
 
 [Dashboard](https://evalforge-web.vercel.app) · [GitHub](https://github.com/ANKOHR/evalforge) · [Evidence](https://github.com/ANKOHR/evalforge/blob/main/docs/evidence.md) · [TraceBrowser sibling project](https://tracebrowser-web.vercel.app)
+
+## 60-second reviewer path
+
+1. Open the [dashboard](https://evalforge-web.vercel.app) and inspect the baseline-vs-candidate comparison.
+2. Read the [evidence record](https://github.com/ANKOHR/evalforge/blob/main/docs/evidence.md) for the exact synthetic/live claim boundary.
+3. Run `py -3.13 scripts/run_demo.py` to regenerate the deterministic showcase report.
+4. Check the [CI workflow](https://github.com/ANKOHR/evalforge/actions/workflows/ci.yml) for lint, tests, demo regeneration and frontend build verification.
 
 ## The flagship proof
 
@@ -32,17 +41,17 @@ py -3.13 scripts/run_demo.py
 
 The demo writes `reports/evalforge-demo.json` and copies the same report into the static dashboard at `apps/web/public/demo/evalforge-demo.json`.
 
-Use the CLI directly:
+Use the installed CLI directly:
 
 ```powershell
-py -3.13 -c "from evalforge.cli import main; main()" run examples/minimal-rag.yaml --system examples/candidate.yaml --output reports/minimal-run.json
-py -3.13 -c "from evalforge.cli import main; main()" compare reports/baseline.json reports/candidate.json --output reports/comparison.json
+evalforge run examples/minimal-rag.yaml --system examples/candidate.yaml --output reports/minimal-run.json
+evalforge compare reports/baseline.json reports/candidate.json --output reports/comparison.json
 ```
 
 Or run the complete benchmark:
 
 ```powershell
-py -3.13 -c "from evalforge.cli import main; main()" benchmark --output-dir reports
+evalforge benchmark --output-dir reports
 ```
 
 ## Included capabilities
